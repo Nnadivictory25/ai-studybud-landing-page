@@ -1,11 +1,10 @@
 <script lang="ts">
-	import { FileSearch, Sparkles } from 'lucide-svelte';
 	import AnimatedChat from '$lib/components/animated-chat.svelte';
+	import { Sparkles } from 'lucide-svelte';
 	import IntersectionObserver from 'svelte-intersection-observer';
-	import { fade, fly, slide } from 'svelte/transition';
-	import { browser } from '$app/environment';
-	import { onMount } from 'svelte';
-	import { backIn, backOut } from 'svelte/easing';
+	import { backOut } from 'svelte/easing';
+	import HowItWorks from '$lib/components/how-it-works.svelte';
+	import { fade, fly } from 'svelte/transition';
 
 	const whyUs = [
 		{
@@ -43,7 +42,8 @@
 
 		{
 			title: 'Access to Fine-tuned Model',
-			description: 'Get access to a fine-tuned model trained to be your smart study buddy',
+			description:
+				'Get access to a fine-tuned model trained to be your smart all-knowing study buddy',
 			icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot-message-square"><path d="M12 6V2H8"/><path d="m8 18-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z"/><path d="M2 12h2"/><path d="M9 11v2"/><path d="M15 11v2"/><path d="M20 12h2"/></svg>'
 		}
 	];
@@ -71,9 +71,9 @@
 		>
 		<div class="tag mt-5 flex items-center gap-4 font-semibold">
 			<div class="users flex items-center -space-x-6">
-				<img width="50" height="50" src="/user1.png" alt="user 1" />
-				<img width="50" height="50" src="/user2.png" alt="user 2" />
-				<img width="50" height="50" src="/user3.png" alt="user 3" />
+				<img width="50" height="50" src="/user1.webp" alt="user 1" />
+				<img width="50" height="50" src="/user2.webp" alt="user 2" />
+				<img width="50" height="50" src="/user3.webp" alt="user 3" />
 			</div>
 			<p class="whitespace-nowrap">
 				Trusted by <span class="font-bold text-primary">5000+</span> students
@@ -86,21 +86,15 @@
 		<IntersectionObserver once element={imgCtn} let:intersecting>
 			<div bind:this={imgCtn}>
 				{#if intersecting}
-					<img
-						bind:this={imgCtn}
-						class="student-img"
-						src="/student.png"
-						alt="student"
-						in:fade={{ duration: 1000 }}
-					/>
+					<img class="student-img" src="/student.webp" alt="student" in:fade={{ duration: 1000 }} />
 				{/if}
 			</div>
 		</IntersectionObserver>
 	</div>
 </section>
 
-<IntersectionObserver once element={whyUsCtn} let:intersecting>
-	<section id="whyUs" class="mb-7 mt-14 h-screen">
+<section id="whyUs" class="min-h-screen pb-7 pt-14 md:min-h-[65vh]">
+	<IntersectionObserver once threshold={0.3} element={whyUsCtn} let:intersecting>
 		<h2>Why use AI Studybud?</h2>
 
 		<div bind:this={whyUsCtn} class="mt-10 grid gap-8 md:grid-cols-3 md:px-24">
@@ -114,15 +108,22 @@
 							{@html icon}
 						</div>
 						<div class="content">
-							<h3 class="pb-1 font-semibold">{title}</h3>
+							<h3 class="pb-1 font-bold">{title}</h3>
 							<p>{description}</p>
 						</div>
 					</div>
 				{/if}
 			{/each}
 		</div>
-	</section>
-</IntersectionObserver>
+	</IntersectionObserver>
+</section>
+
+<section id="howItWorks" class="pt-16">
+	<h2>How it works</h2>
+	<p class="text-center">Using AI Studybud is very simple.</p>
+
+	<HowItWorks />
+</section>
 
 <style>
 	#hero {
@@ -180,7 +181,12 @@
 		@apply h-[40px] w-[40px] rounded-full ring ring-primary-light md:h-[50px] md:w-[50px];
 	}
 
-	#whyUs h2 {
+	section h2 {
 		@apply text-center text-2xl font-extrabold md:text-3xl  md:tracking-tight;
+	}
+
+	#whyUs {
+		background-color: #8ec5fc;
+		background-image: linear-gradient(70deg, #d6eaff 0%, #f3e6ff 100%);
 	}
 </style>

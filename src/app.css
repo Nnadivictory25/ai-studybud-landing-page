@@ -81,6 +81,6 @@
 
 @layer components {
 	.btn {
-		@apply rounded-full border-2 border-[#6933cf]  bg-primary px-3 py-2 text-sm text-white shadow-md transition-all hover:opacity-90 hover:shadow-md md:px-5 md:py-3 md:text-base;
+		@apply rounded-full border-2 border-[#6933cf] bg-primary  px-3 py-2 text-sm font-medium text-white shadow-md transition-all hover:opacity-90 hover:shadow-md md:px-5 md:py-3 md:text-base;
 	}
 }

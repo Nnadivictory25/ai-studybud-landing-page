@@ -1,20 +1,32 @@
 <script>
+	import { onMount } from 'svelte';
 	import '../app.css';
+	import { fly } from 'svelte/transition';
+
+	let animate = false;
+
+	onMount(() => {
+		animate = true;
+	});
 </script>
 
 <div class="">
 	<header>
-		<nav>
-			<a href="/"> <img src="/main-logo.svg" alt="logo" width="200" /></a>
+		{#if animate}
+			<nav in:fly={{ y: -50, duration: 500 }}>
+				<a href="/"> <img src="/main-logo.svg" alt="logo" width="200" /></a>
 
-			<div class="links">
-				<a href="#howItWorks">How it works</a>
-				<a href="faqs">FAQs</a>
-				<a href="#pricing">Pricing</a>
-			</div>
+				<div class="links">
+					<a href="#howItWorks">How it works</a>
+					<a href="faqs">FAQs</a>
+					<a href="#pricing">Pricing</a>
+				</div>
 
-			<a href="https://app.aistudybud.online" class="btn border-gray-800 bg-black"> Try For Free</a>
-		</nav>
+				<a href="https://app.aistudybud.online" class="btn border-gray-800 bg-black">
+					Try For Free</a
+				>
+			</nav>
+		{/if}
 	</header>
 
 	<slot></slot>

@@ -85,7 +85,7 @@
 	let animate = false;
 
 	onMount(() => {
-		animate = true;
+		setTimeout(() => (animate = true), 1000);
 		const interval = setInterval(() => {
 			nextConversation();
 		}, 15000);
