@@ -74,8 +74,30 @@
 		@apply bg-background text-foreground;
 	}
 
+	body::-webkit-scrollbar {
+		width: 4px;
+	}
+
+	body::-webkit-scrollbar-thumb {
+		background-color: #8758fe;
+		border-radius: 9999px;
+	}
+
+	body::-webkit-scrollbar {
+		background-color: #d2c4f6;
+		border-radius: 9999px;
+	}
+
+	body::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
+
 	section {
 		@apply container px-5 md:px-10;
+	}
+
+	html {
+		scroll-behavior: smooth;
 	}
 }
 

@@ -14,7 +14,7 @@
 	<link rel="preload" href="/main-logo.svg" as="image" />
 </svelte:head>
 
-<div class="">
+<div>
 	<header>
 		{#if animate}
 			<nav in:fly={{ y: -50, duration: 500 }}>

@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { CircleUser, Bot } from 'lucide-svelte';
 	import { onMount } from 'svelte';
-	import { backOut } from 'svelte/easing';
+	import { backIn, backInOut, backOut } from 'svelte/easing';
 	import { fly } from 'svelte/transition';
+	import IntersectionObserver from 'svelte-intersection-observer';
 	let fileFormats = ['pdf', 'ppt', 'doc', 'png', 'jpg', 'txt'];
 
 	let conversation = [
@@ -15,66 +16,88 @@
 			message: 'Sure! Here is a summary of the document...'
 		}
 	];
+
+	let step1Ctn: HTMLDivElement;
+	let step2Ctn: HTMLDivElement;
+	let step3Ctn: HTMLDivElement;
 </script>
 
 <div class="mt-14 space-y-24 md:px-24">
-	<div class="getStarted ctn">
-		<div class="left stepCtn">
-			<span class="step">1. Get Started</span>
-			<h2>Sign Up</h2>
-			<p>
-				Click on the <span class="font-semibold">"Get Started"</span> button to create your account and
-				start using AI Studybud for free.
-			</p>
-		</div>
-		<div class="right assetCtn">
-			<a
-				href="https://app.aistudybud.online/"
-				class="btn mx-auto !mt-5 block w-[70%] animate-bounce border-gray-800 bg-black px-4 py-3 text-center text-base shadow-lg md:mx-0 md:w-fit md:text-lg"
-				>Get Started Now</a
-			>
-		</div>
-	</div>
-
-	<div class="upload ctn">
-		<div class="left uploadCtn assetCtn gradient-bg flex items-center md:gap-3">
-			{#each fileFormats as file}
-				<img src="/{file}.webp" alt={file} class="w-12" width="48" height="48" />
-			{/each}
-		</div>
-
-		<div class="right stepCtn">
-			<span class="step">2. Upload</span>
-			<h2>Upload File</h2>
-			<p>
-				In the dashboard, click on the <span class="font-semibold">"Upload"</span> button to upload your
-				documents. You can upload PDFs, Word documents, Images, and TXT files.
-			</p>
-		</div>
-	</div>
-
-	<div class="ask ctn">
-		<div class="left stepCtn">
-			<span class="step">3. Ask AI</span>
-			<h2>Ask your AI Study buddy anything!</h2>
-			<p>
-				After uploading your documents, you can ask your AI Studybud buddy anything you want. It
-				will provide you with the most relevant answer you need.
-			</p>
-		</div>
-		<div class="right mt-3 flex h-[170px] w-full flex-col gap-4 md:mt-0">
-			{#each conversation as { role, message }, i (i)}
-				<div class="chat-message {role}">
-					{#if role === 'user'}
-						<CircleUser class="h-6 w-6 text-primary" />
-					{:else}
-						<Bot class="h-6 w-6 text-primary" />
-					{/if}
-					{message}
+	<IntersectionObserver once element={step1Ctn} let:intersecting>
+		<div bind:this={step1Ctn} class="getStarted ctn">
+			{#if intersecting}
+				<div class="left stepCtn" in:fly={{ x: -50, duration: 1000, easing: backOut }}>
+					<span class="step">1. Get Started</span>
+					<h2>Sign Up</h2>
+					<p>
+						Click on the <span class="font-semibold">"Get Started"</span> button to create your account
+						and start using AI Studybud for free.
+					</p>
 				</div>
-			{/each}
+				<div class="right assetCtn" in:fly={{ x: 50, duration: 1000 }}>
+					<a
+						href="https://app.aistudybud.online/"
+						class="btn mx-auto !mt-5 block w-[70%] animate-bounce border-gray-800 bg-black px-4 py-3 text-center text-base shadow-lg md:mx-0 md:w-fit md:text-lg"
+						>Get Started Now</a
+					>
+				</div>
+			{/if}
 		</div>
-	</div>
+	</IntersectionObserver>
+
+	<IntersectionObserver once threshold={0.4} element={step2Ctn} let:intersecting>
+		<div class="upload ctn" bind:this={step2Ctn}>
+			{#if intersecting}
+				<div
+					class="left uploadCtn assetCtn gradient-bg flex items-center md:gap-3"
+					in:fly={{ x: -50, duration: 1000, easing: backOut }}
+				>
+					{#each fileFormats as file}
+						<img src="/{file}.webp" alt={file} class="w-12" width="48" height="48" />
+					{/each}
+				</div>
+
+				<div class="right stepCtn" in:fly={{ x: 50, duration: 1000 }}>
+					<span class="step">2. Upload</span>
+					<h2>Upload File</h2>
+					<p>
+						In the dashboard, click on the <span class="font-semibold">"Upload"</span> button to upload
+						your documents. You can upload PDFs, Word documents, Images, and TXT files.
+					</p>
+				</div>
+			{/if}
+		</div>
+	</IntersectionObserver>
+
+	<IntersectionObserver once element={step3Ctn} let:intersecting>
+		<div class="ask ctn" bind:this={step3Ctn}>
+			{#if intersecting}
+				<div class="left stepCtn" in:fly={{ x: -50, duration: 1000, easing: backOut }}>
+					<span class="step">3. Ask AI</span>
+					<h2>Ask your AI Study buddy anything!</h2>
+					<p>
+						After uploading your documents, you can ask your AI Studybud buddy anything you want. It
+						will provide you with the most relevant answer you need.
+					</p>
+				</div>
+				<div
+					class="right mt-3 flex h-[170px] w-full flex-col gap-4 md:mt-0"
+					in:fly={{ x: 50, duration: 1000 }}
+				>
+					{#each conversation as { role, message }, i (i)}
+						<div class="chat-message {role}">
+							{#if role === 'user'}
+								<CircleUser class="h-6 w-6 text-primary" />
+							{:else}
+								<Bot class="h-6 w-6 text-primary" />
+							{/if}
+							{message}
+						</div>
+					{/each}
+				</div>
+			{/if}
+		</div>
+	</IntersectionObserver>
 </div>
 
 <style lang="scss">
