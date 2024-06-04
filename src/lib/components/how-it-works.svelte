@@ -56,10 +56,10 @@
 	<div class="ask ctn">
 		<div class="left stepCtn">
 			<span class="step">3. Ask AI</span>
-			<h2>Ask your AI Studybud anything!</h2>
+			<h2>Ask your AI Study buddy anything!</h2>
 			<p>
-				After uploading your documents, you can ask your AI Studybud anything you want. It will
-				provide you with the most relevant answer you need.
+				After uploading your documents, you can ask your AI Studybud buddy anything you want. It
+				will provide you with the most relevant answer you need.
 			</p>
 		</div>
 		<div class="right mt-3 flex h-[170px] w-full flex-col gap-4 md:mt-0">
