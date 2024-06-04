@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { CircleUser, Bot } from 'lucide-svelte';
 	import { onMount } from 'svelte';
-	import { backIn, backInOut, backOut } from 'svelte/easing';
+	import { backIn, backOut } from 'svelte/easing';
 	import { fly } from 'svelte/transition';
 	import IntersectionObserver from 'svelte-intersection-observer';
 	let fileFormats = ['pdf', 'ppt', 'doc', 'png', 'jpg', 'txt'];
@@ -17,16 +17,14 @@
 		}
 	];
 
-	let step1Ctn: HTMLDivElement;
-	let step2Ctn: HTMLDivElement;
-	let step3Ctn: HTMLDivElement;
+	let stepsCtn: HTMLDivElement;
 </script>
 
-<div class="mt-14 space-y-24 md:px-24">
-	<IntersectionObserver once element={step1Ctn} let:intersecting>
-		<div bind:this={step1Ctn} class="getStarted ctn">
-			{#if intersecting}
-				<div class="left stepCtn" in:fly={{ x: -50, duration: 1000, easing: backOut }}>
+<div class="mt-14 space-y-24 md:px-24" bind:this={stepsCtn}>
+	<IntersectionObserver once threshold={0.4} element={stepsCtn} let:intersecting>
+		{#if intersecting}
+			<div class="getStarted ctn">
+				<div class="left stepCtn" in:fly={{ x: -50, duration: 1000 }}>
 					<span class="step">1. Get Started</span>
 					<h2>Sign Up</h2>
 					<p>
@@ -34,30 +32,26 @@
 						and start using AI Studybud for free.
 					</p>
 				</div>
-				<div class="right assetCtn" in:fly={{ x: 50, duration: 1000 }}>
+				<div class="right assetCtn" in:fly={{ x: 50, duration: 1000, delay: 400 }}>
 					<a
 						href="https://app.aistudybud.online/"
 						class="btn mx-auto !mt-5 block w-[70%] animate-bounce border-gray-800 bg-black px-4 py-3 text-center text-base shadow-lg md:mx-0 md:w-fit md:text-lg"
 						>Get Started Now</a
 					>
 				</div>
-			{/if}
-		</div>
-	</IntersectionObserver>
+			</div>
 
-	<IntersectionObserver once threshold={0.4} element={step2Ctn} let:intersecting>
-		<div class="upload ctn" bind:this={step2Ctn}>
-			{#if intersecting}
+			<div class="upload ctn">
 				<div
 					class="left uploadCtn assetCtn gradient-bg flex items-center md:gap-3"
-					in:fly={{ x: -50, duration: 1000, easing: backOut }}
+					in:fly={{ x: -50, duration: 1000 }}
 				>
 					{#each fileFormats as file}
 						<img src="/{file}.webp" alt={file} class="w-12" width="48" height="48" />
 					{/each}
 				</div>
 
-				<div class="right stepCtn" in:fly={{ x: 50, duration: 1000 }}>
+				<div class="right stepCtn" in:fly={{ x: 50, duration: 1000, delay: 900 }}>
 					<span class="step">2. Upload</span>
 					<h2>Upload File</h2>
 					<p>
@@ -65,14 +59,10 @@
 						your documents. You can upload PDFs, Word documents, Images, and TXT files.
 					</p>
 				</div>
-			{/if}
-		</div>
-	</IntersectionObserver>
+			</div>
 
-	<IntersectionObserver once element={step3Ctn} let:intersecting>
-		<div class="ask ctn" bind:this={step3Ctn}>
-			{#if intersecting}
-				<div class="left stepCtn" in:fly={{ x: -50, duration: 1000, easing: backOut }}>
+			<div class="ask ctn">
+				<div class="left stepCtn" in:fly={{ x: -50, duration: 1000 }}>
 					<span class="step">3. Ask AI</span>
 					<h2>Ask your AI Study buddy anything!</h2>
 					<p>
@@ -82,7 +72,7 @@
 				</div>
 				<div
 					class="right mt-3 flex h-[170px] w-full flex-col gap-4 md:mt-0"
-					in:fly={{ x: 50, duration: 1000 }}
+					in:fly={{ x: 50, duration: 1000, delay: 1200 }}
 				>
 					{#each conversation as { role, message }, i (i)}
 						<div class="chat-message {role}">
@@ -95,8 +85,8 @@
 						</div>
 					{/each}
 				</div>
-			{/if}
-		</div>
+			</div>
+		{/if}
 	</IntersectionObserver>
 </div>
 
