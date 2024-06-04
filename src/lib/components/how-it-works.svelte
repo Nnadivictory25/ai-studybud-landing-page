@@ -21,10 +21,10 @@
 </script>
 
 <div class="mt-14 space-y-24 md:px-24" bind:this={stepsCtn}>
-	<IntersectionObserver once threshold={0.4} element={stepsCtn} let:intersecting>
+	<IntersectionObserver once element={stepsCtn} let:intersecting>
 		{#if intersecting}
-			<div class="getStarted ctn">
-				<div class="left stepCtn" in:fly={{ x: -50, duration: 1000 }}>
+			<div class="getStarted ctn" in:fly={{ x: -50, duration: 1000 }}>
+				<div class="left stepCtn">
 					<span class="step">1. Get Started</span>
 					<h2>Sign Up</h2>
 					<p>
@@ -41,11 +41,8 @@
 				</div>
 			</div>
 
-			<div class="upload ctn">
-				<div
-					class="left uploadCtn assetCtn gradient-bg flex items-center md:gap-3"
-					in:fly={{ x: -50, duration: 1000 }}
-				>
+			<div class="upload ctn" in:fly={{ x: -50, duration: 1000, delay: 800 }}>
+				<div class="left uploadCtn assetCtn gradient-bg flex items-center md:gap-3">
 					{#each fileFormats as file}
 						<img src="/{file}.webp" alt={file} class="w-12" width="48" height="48" />
 					{/each}
@@ -61,8 +58,8 @@
 				</div>
 			</div>
 
-			<div class="ask ctn">
-				<div class="left stepCtn" in:fly={{ x: -50, duration: 1000 }}>
+			<div class="ask ctn" in:fly={{ x: -50, duration: 1000, delay: 1000 }}>
+				<div class="left stepCtn">
 					<span class="step">3. Ask AI</span>
 					<h2>Ask your AI Study buddy anything!</h2>
 					<p>
@@ -104,7 +101,7 @@
 	}
 
 	.ctn {
-		@apply grid gap-3 md:grid-cols-2 md:gap-36;
+		@apply grid  gap-3 md:grid-cols-2 md:gap-36;
 	}
 
 	.assetCtn {

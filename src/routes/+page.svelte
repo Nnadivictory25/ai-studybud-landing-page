@@ -126,7 +126,7 @@
 	</IntersectionObserver>
 </section>
 
-<section id="howItWorks" class="min-h-screen py-16 md:min-h-[65vh]">
+<section id="howItWorks" class="min-h-screen py-16 md:min-h-[75vh]">
 	<h2>How it works</h2>
 	<p class="text-center">Using AI Studybud is very simple.</p>
 
