@@ -10,6 +10,10 @@
 	});
 </script>
 
+<svelte:head>
+	<link rel="preload" href="/main-logo.svg" as="image" />
+</svelte:head>
+
 <div class="">
 	<header>
 		{#if animate}
