@@ -38,7 +38,7 @@
 
 <style>
 	nav {
-		@apply absolute inset-x-0 top-5 z-10 mx-auto flex w-[95%] items-center justify-between rounded-full border-2 bg-white pr-5 font-medium shadow-sm   md:w-[60%] md:pr-9;
+		@apply absolute inset-x-0 top-5 z-10 mx-auto flex h-[70px] w-[95%] items-center justify-between rounded-full border-2 bg-white pr-5 font-medium shadow-sm   md:w-[60%] md:pr-9;
 	}
 
 	nav img {
