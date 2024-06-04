@@ -14,7 +14,7 @@
 	<header>
 		{#if animate}
 			<nav in:fly={{ y: -50, duration: 500 }}>
-				<a href="/"> <img src="/main-logo.svg" alt="logo" width="200" /></a>
+				<a href="/"> <img src="/main-logo.svg" alt="logo" width="200" height="200" /></a>
 
 				<div class="links">
 					<a href="#howItWorks">How it works</a>

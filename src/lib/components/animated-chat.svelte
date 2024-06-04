@@ -124,31 +124,6 @@
 		@apply mt-7 flex h-[80vh] w-full flex-col gap-2 p-3 px-4 md:mt-0 md:h-auto;
 	}
 
-	.chat-message {
-		@apply select-none rounded-md p-4 font-medium;
-	}
-
-	.chat-message.ai {
-		background: rgba(105, 51, 207, 0.09);
-		border-radius: 16px;
-		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-		backdrop-filter: blur(5.1px);
-		-webkit-backdrop-filter: blur(5.1px);
-		border: 1px solid rgba(105, 51, 207, 0.56);
-
-		@apply md:w-[90%];
-	}
-
-	.chat-message.user {
-		background: rgba(133, 74, 245, 0.23);
-		border-radius: 16px;
-		box-shadow: 0 4px 30px rgba(47, 47, 47, 0.1);
-		backdrop-filter: blur(5.8px);
-		-webkit-backdrop-filter: blur(5.8px);
-		border: 1px solid rgba(72, 44, 124, 0.54);
-		@apply self-end md:w-[90%];
-	}
-
 	.header {
 		@apply select-none text-center font-medium text-primary;
 	}

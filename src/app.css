@@ -83,4 +83,29 @@
 	.btn {
 		@apply rounded-full border-2 border-[#6933cf] bg-primary  px-3 py-2 text-sm font-medium text-white shadow-md transition-all hover:opacity-90 hover:shadow-md md:px-5 md:py-3 md:text-base;
 	}
+
+	.chat-message {
+		@apply select-none rounded-md p-4 font-medium;
+	}
+
+	.chat-message.ai {
+		background: rgba(105, 51, 207, 0.09);
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(5.1px);
+		-webkit-backdrop-filter: blur(5.1px);
+		border: 1px solid rgba(105, 51, 207, 0.56);
+
+		@apply md:w-[90%];
+	}
+
+	.chat-message.user {
+		background: rgba(133, 74, 245, 0.23);
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(47, 47, 47, 0.1);
+		backdrop-filter: blur(5.8px);
+		-webkit-backdrop-filter: blur(5.8px);
+		border: 1px solid rgba(72, 44, 124, 0.54);
+		@apply md:w-[90%] md:self-end;
+	}
 }

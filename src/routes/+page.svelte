@@ -54,14 +54,15 @@
 
 <section id="hero">
 	<div class="left">
-		<span class="tag">
+		<span class="tag gradient-border">
 			<Sparkles strokeWidth="1" class="w-5 text-primary md:w-auto " />
-			<p>Your Smart AI Study Buddy</p>
+			<p>Your Smart AI Study Companion</p>
 		</span>
 
-		<h1>Get Precise Answers from Your Notes</h1>
+		<h1>Focus on What Matters while Studying</h1>
 		<p class="sub">
-			AI Studybud helps you learn the important concepts without wasting time on boring notes.
+			AI Studybud helps you learn the important concepts during your studies without wasting time on
+			boring notes.
 		</p>
 
 		<a
@@ -86,7 +87,14 @@
 		<IntersectionObserver once element={imgCtn} let:intersecting>
 			<div bind:this={imgCtn}>
 				{#if intersecting}
-					<img class="student-img" src="/student.webp" alt="student" in:fade={{ duration: 1000 }} />
+					<img
+						class="student-img"
+						src="/student.webp"
+						alt="student"
+						in:fade={{ duration: 1000 }}
+						width="250"
+						height="250"
+					/>
 				{/if}
 			</div>
 		</IntersectionObserver>
@@ -125,7 +133,7 @@
 	<HowItWorks />
 </section>
 
-<style>
+<style lang="scss">
 	#hero {
 		position: relative;
 		min-height: 100vh;
@@ -162,15 +170,15 @@
 	}
 
 	.tag {
-		@apply mb-4 flex w-fit items-center gap-2 rounded-full border border-primary bg-purple-300 bg-opacity-20  px-5 py-1 text-sm font-semibold  md:text-base;
+		@apply mb-4 flex w-full items-center gap-2 rounded-full border border-primary bg-purple-300 bg-opacity-20 px-5  py-1 text-sm font-semibold md:w-fit  md:text-base;
 	}
 
 	h1 {
-		@apply text-3xl font-extrabold md:text-5xl md:tracking-tight;
+		@apply text-3xl font-extrabold tracking-tight md:text-5xl;
 	}
 
 	.sub {
-		@apply pt-3 text-left text-lg font-medium text-gray-700;
+		@apply pt-3 text-left text-lg font-medium tracking-tight text-gray-700 md:pr-5;
 	}
 
 	.student-img {
@@ -187,6 +195,45 @@
 
 	#whyUs {
 		background-color: #8ec5fc;
-		background-image: linear-gradient(70deg, #d6eaff 0%, #f3e6ff 100%);
+		background-image: linear-gradient(70deg, rgb(214, 234, 255) 0%, #f3e6ff 100%);
+	}
+
+	.gradient-border {
+		--border-width: 2px;
+
+		position: relative;
+		background: #fff;
+		width: fit-content;
+
+		&::after {
+			position: absolute;
+			content: '';
+			top: calc(-1 * var(--border-width));
+			left: calc(-1 * var(--border-width));
+			z-index: -1;
+			border-radius: 999px;
+			width: calc(100% + var(--border-width) * 2);
+			height: calc(100% + var(--border-width) * 2);
+			background: linear-gradient(
+				60deg,
+				hsl(0, 0%, 5%),
+				hsl(269, 85%, 66%),
+				hsl(314, 85%, 66%),
+				hsl(359, 85%, 66%),
+				hsl(44, 85%, 66%),
+				hsl(89, 85%, 66%),
+				hsl(134, 85%, 66%),
+				hsl(179, 85%, 66%)
+			);
+			background-size: 300% 300%;
+			background-position: 0 50%;
+			animation: moveGradient 4s alternate infinite;
+		}
+	}
+
+	@keyframes moveGradient {
+		50% {
+			background-position: 100% 50%;
+		}
 	}
 </style>
