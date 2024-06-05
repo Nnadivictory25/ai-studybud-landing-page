@@ -98,7 +98,7 @@
 	}
 
 	.testimonial {
-		@apply relative flex w-[290px] max-w-sm flex-col gap-7 rounded-md border border-transparent bg-white p-5 pt-12 shadow transition-all hover:border-primary md:w-auto;
+		@apply relative flex w-[290px] max-w-sm flex-col gap-7 rounded-md border border-transparent bg-white p-5 pt-12 shadow transition-all hover:border-primary md:w-auto md:p-7;
 
 		h3 {
 			@apply font-semibold;
