@@ -5,6 +5,7 @@
 	import { backOut } from 'svelte/easing';
 	import HowItWorks from '$lib/components/how-it-works.svelte';
 	import { fade, fly } from 'svelte/transition';
+	import Testimonials from '$lib/components/testimonials.svelte';
 
 	const whyUs = [
 		{
@@ -53,6 +54,10 @@
 </script>
 
 <section id="hero">
+	<div
+		class="absolute inset-0 mx-auto h-44 max-w-xs blur-[118px]"
+		style="background: linear-gradient(152.92deg, rgba(192, 132, 252, 0.2) 4.54%, rgba(232, 121, 249, 0.26) 34.2%, rgba(192, 132, 252, 0.1) 77.55%);"
+	></div>
 	<div class="left">
 		<span class="tag gradient-border">
 			<Sparkles strokeWidth="1" class="w-5 text-primary md:w-auto " />
@@ -61,8 +66,8 @@
 
 		<h1>Focus on What Matters while Studying</h1>
 		<p class="sub">
-			AI Studybud helps you learn the important concepts during your studies without wasting time on
-			boring notes.
+			AI Studybud helps you learn the important concepts fast when studying so you don't waste time
+			on boring notes.
 		</p>
 
 		<a
@@ -93,7 +98,7 @@
 						alt="student"
 						in:fade={{ duration: 1000 }}
 						width="250"
-						height="250"
+						height="550"
 					/>
 				{/if}
 			</div>
@@ -131,6 +136,13 @@
 	<p class="text-center">Using AI Studybud is very simple.</p>
 
 	<HowItWorks />
+</section>
+
+<section id="testimonials" class="min-h-screen bg-gray-100 py-16 md:min-h-[75vh]">
+	<h2>Testimonials</h2>
+	<p class="text-center">Don't just take our word for it...</p>
+
+	<Testimonials />
 </section>
 
 <style lang="scss">

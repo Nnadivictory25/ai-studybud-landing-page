@@ -21,7 +21,7 @@
 </script>
 
 <div class="mt-14 space-y-24 md:px-24" bind:this={stepsCtn}>
-	<IntersectionObserver once element={stepsCtn} let:intersecting>
+	<IntersectionObserver threshold={0.4} once element={stepsCtn} let:intersecting>
 		{#if intersecting}
 			<div class="getStarted ctn" in:fly={{ x: -50, duration: 1000 }}>
 				<div class="left stepCtn">

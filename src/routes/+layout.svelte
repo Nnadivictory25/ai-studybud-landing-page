@@ -11,14 +11,14 @@
 </script>
 
 <svelte:head>
-	<link rel="preload" href="/main-logo.svg" as="image" />
+	<link rel="preload" href="/main-logo.png" as="image" />
 </svelte:head>
 
 <div>
 	<header>
 		{#if animate}
 			<nav in:fly={{ y: -50, duration: 500 }}>
-				<a href="/"> <img src="/main-logo.svg" alt="logo" width="200" /></a>
+				<a href="/"> <img src="/main-logo.png" alt="logo" width="200" /></a>
 
 				<div class="links">
 					<a href="#howItWorks">How it works</a>
