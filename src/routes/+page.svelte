@@ -6,6 +6,7 @@
 	import HowItWorks from '$lib/components/how-it-works.svelte';
 	import { fade, fly } from 'svelte/transition';
 	import Testimonials from '$lib/components/testimonials.svelte';
+	import Pricing from '$lib/components/pricing.svelte';
 
 	const whyUs = [
 		{
@@ -36,7 +37,7 @@
 		},
 
 		{
-			title: 'Summarization of Documents',
+			title: 'Summarize Long Documents',
 			description: 'Quickly review important points with concise summaries of lengthy documents',
 			icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-info"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><line x1="12" x2="12" y1="16" y2="12"/><line x1="12" x2="12.01" y1="8" y2="8"/></svg>'
 		},
@@ -143,6 +144,13 @@
 	<p class="text-center">Don't just take our word for it...</p>
 
 	<Testimonials />
+</section>
+
+<section id="pricing" class="min-h-screen py-16 md:min-h-[75vh]">
+	<h2>Pricing</h2>
+	<p class="text-center">Take a look at our affordable pricing plans.</p>
+
+	<Pricing />
 </section>
 
 <style lang="scss">

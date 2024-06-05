@@ -38,6 +38,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"bits-ui": "^0.21.10",
 		"clsx": "^2.1.1",
 		"lucide-svelte": "^0.316.0",
 		"svelte-fast-marquee": "^0.7.0",
