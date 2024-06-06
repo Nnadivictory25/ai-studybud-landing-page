@@ -26,17 +26,28 @@
 					<a href="#pricing">Pricing</a>
 				</div>
 
-				<a href="https://app.aistudybud.online" class="btn border-gray-800 bg-black">
+				<a href="https://app.aistudybud.online" class="btn !border-gray-800 !bg-black">
 					Try For Free</a
 				>
 			</nav>
 		{/if}
 	</header>
 
-	<slot></slot>
+	<slot />
+
+	<footer>
+		<a href="/"> <img src="/main-logo.png" alt="logo" width="200" /></a>
+
+		<div class="flex flex-col items-center gap-5 text-black md:flex-row">
+			<a href="#faqs">FAQs</a>
+			<a href="#pricing">Pricing</a>
+			<a href="/privacy">Privacy Policy</a>
+			<a href="/terms">Terms of Service</a>
+		</div>
+	</footer>
 </div>
 
-<style>
+<style lang="scss">
 	nav {
 		@apply absolute inset-x-0 top-5 z-10 mx-auto flex h-[70px] w-[95%] items-center justify-between rounded-full border-2 bg-white pr-5 font-medium shadow-sm   md:w-[60%] md:pr-9;
 	}
@@ -51,5 +62,13 @@
 
 	.links a {
 		@apply text-gray-600 hover:text-black;
+	}
+
+	footer {
+		@apply mx-auto flex flex-col justify-center gap-7 bg-white px-24 py-7 text-black md:max-w-4xl md:flex-row md:gap-20;
+
+		a {
+			@apply font-medium hover:underline;
+		}
 	}
 </style>

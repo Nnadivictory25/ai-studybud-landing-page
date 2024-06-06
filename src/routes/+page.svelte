@@ -7,6 +7,7 @@
 	import { fade, fly } from 'svelte/transition';
 	import Testimonials from '$lib/components/testimonials.svelte';
 	import Pricing from '$lib/components/pricing.svelte';
+	import Faqs from '$lib/components/faqs.svelte';
 
 	const whyUs = [
 		{
@@ -146,11 +147,23 @@
 	<Testimonials />
 </section>
 
-<section id="pricing" class="min-h-screen py-16 md:min-h-[75vh]">
+<section id="pricing" class="relative min-h-screen py-16 md:min-h-[75vh]">
+	<div
+		class="absolute inset-0 mx-auto h-44 max-w-xs blur-[118px]"
+		style="background: linear-gradient(152.92deg, rgba(192, 132, 252, 0.2) 4.54%, rgba(232, 121, 249, 0.26) 34.2%, rgba(192, 132, 252, 0.1) 77.55%);"
+	></div>
+
 	<h2>Pricing</h2>
 	<p class="text-center">Take a look at our affordable pricing plans.</p>
 
 	<Pricing />
+</section>
+
+<section id="faqs" class="min-h-screen py-16 md:min-h-[75vh]">
+	<h2>FAQs</h2>
+	<p class="text-center">Frequently asked questions</p>
+
+	<Faqs />
 </section>
 
 <style lang="scss">
@@ -211,6 +224,15 @@
 
 	section h2 {
 		@apply text-center text-2xl font-extrabold md:text-3xl  md:tracking-tight;
+	}
+
+	#faqs {
+		background-color: rgba(83, 242, 155, 0.1);
+		background-image: linear-gradient(
+			45deg,
+			rgba(194, 255, 222, 0.4) 0%,
+			rgba(252, 251, 229, 0.3) 80%
+		);
 	}
 
 	#whyUs {

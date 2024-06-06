@@ -63,7 +63,11 @@
 	</span>
 </div>
 
-<div class="mt-10 flex flex-col justify-center gap-10 md:flex-row">
+<div class="relative mt-10 flex flex-col justify-center gap-10 md:flex-row">
+	<div
+		class="absolute inset-0 bottom-0 top-44 h-44 max-w-sm blur-[218px]"
+		style="background: linear-gradient(202.92deg, rgba(192, 132, 252, 0.2) 33.54%, rgba(232, 121, 249, 0.26) 34.2%, rgba(192, 132, 252, 0.1) 77.55%);"
+	></div>
 	{#each plans as plan, i (i)}
 		<Card.Root
 			class={`relative h-full w-full md:h-auto md:w-[35%] ${plan.isPopular ? 'bg-primary !text-white' : ''}`}

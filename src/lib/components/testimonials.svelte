@@ -38,6 +38,15 @@
 			testimony:
 				'I as a student had a hard time focusing while reading, I am not the patient reading type. I wanted a way to accelerate my learning and I thought of a tool that could find information for me fast from my university lecture notes, building this has helped me a lot as I get clarification on topics discussed in class later',
 			img: '/founder.jpg'
+		},
+
+		{
+			name: 'Favor',
+			title: 'Post-graduate Student',
+			uni: 'UK',
+			testimony:
+				'As a post-graduate student, I was struggling to keep up with the pace of my coursework. AI Studybud has been a game-changer for me. It has helped me to focus and has made my learning experience much more efficient. Writing my thesis was a breeze too !',
+			img: '/favor.jpg'
 		}
 	];
 
