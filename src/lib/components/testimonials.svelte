@@ -1,7 +1,5 @@
 <script lang="ts">
 	import Marquee from 'svelte-fast-marquee';
-	import { onMount } from 'svelte';
-	import { browser } from '$app/environment';
 
 	let testimonials = [
 		{
@@ -49,27 +47,53 @@
 			img: '/favor.jpg'
 		}
 	];
-
-	let isMobile = false;
-
-	onMount(() => {
-		if (browser) {
-			isMobile = window.innerWidth < 768;
-		}
-	});
 </script>
 
-<Marquee
-	gradient
-	speed={25}
-	gap={'2rem'}
-	pauseOnHover={!isMobile}
-	pauseOnClick
-	class=" w-full items-center  py-10"
-	style="--gradientColor: rgb(243 244 246); --gradientWidth: 2%;"
->
+<div class="hidden md:block">
+	<Marquee
+		gradient
+		speed={25}
+		gap={'2rem'}
+		pauseOnHover
+		class=" w-full items-center  py-10"
+		style="--gradientColor: rgb(243 244 246); --gradientWidth: 2%;"
+	>
+		{#each testimonials as { name, title, uni, testimony, img }, i (i)}
+			<div class="testimonial">
+				<div class="absolute top-3 flex items-center">
+					<img src="/star.webp" alt="star" width="20" height="20" />
+					<img src="/star.webp" alt="star" width="20" height="20" />
+					<img src="/star.webp" alt="star" width="20" height="20" />
+					<img src="/star.webp" alt="star" width="20" height="20" />
+					<img src="/star.webp" alt="star" width="20" height="20" />
+				</div>
+				<div class="text-center text-lg font-medium">
+					<p>"{testimony}"</p>
+				</div>
+				<div class="flex flex-col items-start gap-3 text-left md:flex-row">
+					<div class="avatar">
+						<img
+							src={img}
+							alt={name}
+							width="40"
+							height="40"
+							class="pb mt-1 rounded-full ring ring-primary"
+						/>
+					</div>
+					<div>
+						<h3 class="pt-1 md:pt-0">{name}</h3>
+						<p class="font-medium text-gray-700">{title},</p>
+						<p class="font-medium text-gray-700">{uni}</p>
+					</div>
+				</div>
+			</div>
+		{/each}
+	</Marquee>
+</div>
+
+<div class="mt-7 space-y-5 md:hidden">
 	{#each testimonials as { name, title, uni, testimony, img }, i (i)}
-		<button class="testimonial">
+		<div class="testimonial">
 			<div class="absolute top-3 flex items-center">
 				<img src="/star.webp" alt="star" width="20" height="20" />
 				<img src="/star.webp" alt="star" width="20" height="20" />
@@ -80,7 +104,7 @@
 			<div class="text-center text-lg font-medium">
 				<p>"{testimony}"</p>
 			</div>
-			<div class="flex flex-col items-start gap-3 text-left md:flex-row">
+			<div class="flex items-start gap-5 text-left md:flex-row">
 				<div class="avatar">
 					<img
 						src={img}
@@ -92,13 +116,13 @@
 				</div>
 				<div>
 					<h3 class="pt-1 md:pt-0">{name}</h3>
-					<p class="font-medium text-gray-700">{title},</p>
-					<p class="font-medium text-gray-700">{uni}</p>
+					<p class="font-medium text-gray-600">{title},</p>
+					<p class="font-medium text-gray-600">{uni}</p>
 				</div>
 			</div>
-		</button>
+		</div>
 	{/each}
-</Marquee>
+</div>
 
 <style lang="scss">
 	.avatar {
@@ -107,7 +131,7 @@
 	}
 
 	.testimonial {
-		@apply relative flex w-[290px] max-w-sm flex-col gap-7 rounded-md border border-transparent bg-white p-5 pt-12 shadow transition-all hover:border-primary md:w-auto md:p-7;
+		@apply relative flex w-full max-w-sm flex-col gap-7 rounded-md border border-transparent bg-white p-5 pt-12 shadow transition-all hover:border-primary md:w-auto md:p-7;
 
 		h3 {
 			@apply font-semibold;
