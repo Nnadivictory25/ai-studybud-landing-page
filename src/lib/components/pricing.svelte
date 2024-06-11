@@ -30,7 +30,8 @@
 				`Access to fine-tuned model`,
 				`Access to use NLP model in chat (eg: "What is in page 2 of this doc?")`,
 				`Summarization`,
-				`Test generation`
+				`Study guide generation`,
+				`Quiz generation`
 			]
 		},
 

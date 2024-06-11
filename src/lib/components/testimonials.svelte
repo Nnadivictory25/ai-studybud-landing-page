@@ -67,7 +67,7 @@
 					<img src="/star.webp" alt="star" width="20" height="20" />
 					<img src="/star.webp" alt="star" width="20" height="20" />
 				</div>
-				<div class="text-center text-lg font-medium">
+				<div class="text-center text-lg font-medium mt-3">
 					<p>"{testimony}"</p>
 				</div>
 				<div class="flex flex-col items-start gap-3 text-left md:flex-row">
