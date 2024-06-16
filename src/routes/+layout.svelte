@@ -11,7 +11,7 @@
 
 	const title = 'AI Studybud - Your Smart Study Companion';
 	const desc =
-		'Study Faster with AI Studybud: Generate Quizzes, Study Guides, Summarize Documents, Ask Questions and get Comprehensive answers, and more...';
+		'Study Faster with AI Studybud: Generate Quizzes, Study Guides, Summarize Documents, Ask Questions and get Comprehensive answers';
 
 	const keywords = [
 		'Study with AI',
