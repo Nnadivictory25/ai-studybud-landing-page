@@ -11,7 +11,7 @@
 
 	const title = 'AI Studybud - Your Smart Study Companion';
 	const desc =
-		'Enhance your learning with AI Studybud, your smart study companion. Upload courses, simplify hard concepts, ask questions, and get personalized assistance with AI';
+		'Study Faster with AI Studybud: Generate Quizzes, Study Guides, Summarize Documents, Ask Questions and get Comprehensive answers, and more...';
 
 	const keywords = [
 		'Study with AI',
