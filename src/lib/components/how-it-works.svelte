@@ -35,7 +35,7 @@
 				<div class="right assetCtn" in:fly={{ x: 50, duration: 1000, delay: 400 }}>
 					<a
 						href="https://app.aistudybud.online/"
-						class="btn mx-auto !mt-5 block w-[70%] animate-bounce border-gray-800 bg-black px-4 py-3 text-center text-base shadow-lg md:mx-0 md:w-fit md:text-lg"
+						class="btn mx-auto !mt-5 block w-[70%] border-gray-800 bg-black px-4 py-3 text-center text-base shadow-lg md:mx-0 md:w-fit md:text-lg"
 						>Get Started Now</a
 					>
 				</div>
@@ -68,7 +68,7 @@
 					</p>
 				</div>
 				<div
-					class="right mt-3 flex h-[170px] w-full flex-col gap-4 md:mt-0"
+					class="right assetCtn mt-3 flex !h-[280px] w-full flex-col gap-4 px-3 md:mt-0"
 					in:fly={{ x: 50, duration: 1000, delay: 1200 }}
 				>
 					{#each conversation as { role, message }, i (i)}

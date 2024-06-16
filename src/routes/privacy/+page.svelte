@@ -1,3 +1,9 @@
+
+<svelte:head>
+	<title>Privacy Policy - AI Studybud</title>
+	<meta name="description" content="Privacy Policy - AI Studybud" />
+</svelte:head>
+
 <div class="px-5 pt-44 md:px-24">
 	{@html `
       

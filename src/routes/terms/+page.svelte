@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Terms of Service - AI Studybud</title>
+</svelte:head>
+
 <section class="pb-5 pt-36">
 	<h1 id="ai-studybud-terms-and-conditions">AI Studybud Terms and Conditions</h1>
 	<p><strong>Effective Date</strong>: September 09 2023</p>

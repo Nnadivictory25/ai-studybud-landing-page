@@ -8,10 +8,71 @@
 	onMount(() => {
 		animate = true;
 	});
+
+	const title = 'AI Studybud - Your Smart Study Companion';
+	const desc =
+		'Enhance your learning with AI Studybud, your smart study companion. Upload courses, simplify hard concepts, ask questions, and get personalized assistance with AI';
+
+	const keywords = [
+		'Study with AI',
+		'Studybuddy',
+		'AI Quiz genearator',
+		'PDF to Quiz app',
+		'free PDF to Quiz app',
+		'PDF to Quiz',
+		'Quiz generator',
+		'Quiz maker',
+		'Flashcard maker',
+		'Flashcard generator',
+		'Essay writer',
+		'PDF summarizer',
+		'PDF summarization',
+		'free ai studybuddy',
+		'Studybuddy ai',
+		'Studybud',
+		'Studybud ai',
+		'Online study help',
+		'Study help online',
+		'AI-powered study assistant',
+		'Study partner AI',
+		'Study partner',
+		'study companion',
+		'Study buddy',
+		'ai study buddy',
+		'ai study buddy free',
+		'Smart study tool',
+		'Study aid with AI',
+		'AI for studying',
+		'Online learning companion',
+		'Study assistance app',
+		'Intelligent study buddy'
+	];
 </script>
 
 <svelte:head>
 	<link rel="preload" href="/main-logo.png" as="image" />
+
+	<title>{title}</title>
+	<meta name="description" content={desc} />
+
+	<meta property="og:url" content="https://www.aistudybud.online" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="{title}</title>" />
+	<meta property="site_name" content="AI Studybud" />
+	<meta property="og:description" content={desc} />
+	<meta property="og:image" content="https://www.aistudybud.online/og.png" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="twitter:domain" content="aistudybud.online" />
+	<meta property="twitter:url" content="https://www.aistudybud.online" />
+	<meta name="twitter:title" content="{title}</title>" />
+	<meta name="twitter:description" content={desc} />
+	<meta name="twitter:image" content="https://www.aistudybud.online/og.png" />
+
+	<link rel="canonical" href="https://www.aistudybud.online" />
+	<meta name="robots" content="index, follow" />
+	<meta name="googlebot" content="index, follow" />
+	<meta name="keywords" content={keywords.join(', ')} />
 </svelte:head>
 
 <div>
