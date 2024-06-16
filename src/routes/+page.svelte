@@ -56,10 +56,6 @@
 </script>
 
 <section id="hero">
-	<div
-		class="absolute inset-0 mx-auto h-44 max-w-xs blur-[118px]"
-		style="background: linear-gradient(152.92deg, rgba(192, 132, 252, 0.2) 4.54%, rgba(232, 121, 249, 0.26) 34.2%, rgba(192, 132, 252, 0.1) 77.55%);"
-	></div>
 	<div class="left">
 		<span class="tag gradient-border">
 			<Sparkles strokeWidth="1" class="w-5 text-primary md:w-auto " />
