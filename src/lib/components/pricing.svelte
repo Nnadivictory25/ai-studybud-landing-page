@@ -56,6 +56,7 @@
 	<Switch
 		class="!outline-none"
 		checked={!isMonthly}
+		aria-label="Switch between monthly and yearly pricing"
 		onCheckedChange={(checked) => (isMonthly = !checked)}
 	/>
 	<span class={` space-x-3 ${!isMonthly ? 'text-black' : 'text-gray-500'}`}>
