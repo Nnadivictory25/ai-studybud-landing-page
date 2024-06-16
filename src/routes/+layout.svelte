@@ -51,6 +51,7 @@
 
 <svelte:head>
 	<link rel="preload" href="/main-logo.png" as="image" />
+	<link rel="preload" href="/student.webp" as="image" />
 
 	<title>{title}</title>
 	<meta name="description" content={desc} />
