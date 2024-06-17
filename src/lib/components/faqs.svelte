@@ -27,7 +27,7 @@
 		},
 		{
 			question: `Can the AI understand natural language?`,
-			answer: `Yes, the AI can understand natural language. You can ask questions like "".`
+			answer: `Yes, the AI can understand natural language. You can ask questions like "Generate a study guide for me".`
 		},
 		{
 			question: 'Can I also use this on my mobile?',
