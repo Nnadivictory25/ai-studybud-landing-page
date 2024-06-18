@@ -58,16 +58,16 @@
 
 	<meta property="og:url" content="https://www.aistudybud.online" />
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="{title}" />
-	<meta property="site_name" content="AI Studybud" />
+	<meta property="og:title" content={title} />
+	<meta property="og:site_name" content="AI Studybud" />
 	<meta property="og:description" content={desc} />
 	<meta property="og:image" content="https://www.aistudybud.online/og.png" />
 
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta property="twitter:domain" content="aistudybud.online" />
 	<meta property="twitter:url" content="https://www.aistudybud.online" />
-	<meta name="twitter:title" content="{title}" />
-	<meta name="twitter:description" content={desc} />
+	<meta name="twitter:title" content={title} />
+	<meta property="twitter:description" content={desc} />
 	<meta name="twitter:image" content="https://www.aistudybud.online/og.png" />
 
 	<link rel="canonical" href="https://www.aistudybud.online" />
