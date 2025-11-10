@@ -43,7 +43,7 @@
 	"dependencies": {
 		"bits-ui": "^0.21.16",
 		"clsx": "^2.1.1",
-		"isomorphic-dompurify": "^2.31.0",
+		"isomorphic-dompurify": "^2.15.0",
 		"lucide-svelte": "^0.316.0",
 		"svelte-fast-marquee": "^0.7.0",
 		"tailwind-merge": "^2.6.0",
