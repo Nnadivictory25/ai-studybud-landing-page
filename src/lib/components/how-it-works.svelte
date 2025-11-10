@@ -34,7 +34,7 @@
 				</div>
 				<div class="right assetCtn" in:fly={{ x: 50, duration: 1000, delay: 400 }}>
 					<a
-						href="https://app.aistudybud.online/"
+						href="https://app.aistudybud.site/"
 						class="btn mx-auto !mt-5 block w-[70%] border-gray-800 bg-black px-4 py-3 text-center text-base shadow-lg md:mx-0 md:w-fit md:text-lg"
 						>Get Started Now</a
 					>

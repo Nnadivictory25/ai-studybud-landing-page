@@ -56,21 +56,21 @@
 	<title>{title}</title>
 	<meta name="description" content={desc} />
 
-	<meta property="og:url" content="https://www.aistudybud.online" />
+	<meta property="og:url" content="https://www.aistudybud.site" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content={title} />
 	<meta property="og:site_name" content="AI Studybud" />
 	<meta property="og:description" content={desc} />
-	<meta property="og:image" content="https://www.aistudybud.online/og.png" />
+	<meta property="og:image" content="https://www.aistudybud.site/og.png" />
 
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta property="twitter:domain" content="aistudybud.online" />
-	<meta property="twitter:url" content="https://www.aistudybud.online" />
+	<meta property="twitter:domain" content="aistudybud.site" />
+	<meta property="twitter:url" content="https://www.aistudybud.site" />
 	<meta name="twitter:title" content={title} />
 	<meta property="twitter:description" content={desc} />
-	<meta name="twitter:image" content="https://www.aistudybud.online/og.png" />
+	<meta name="twitter:image" content="https://www.aistudybud.site/og.png" />
 
-	<link rel="canonical" href="https://www.aistudybud.online" />
+	<link rel="canonical" href="https://www.aistudybud.site" />
 	<meta name="robots" content="index, follow" />
 	<meta name="googlebot" content="index, follow" />
 	<meta name="keywords" content={keywords.join(', ')} />
@@ -88,7 +88,7 @@
 					<a href="#pricing">Pricing</a>
 				</div>
 
-				<a href="https://app.aistudybud.online" class="btn !border-gray-800 !bg-black">
+				<a href="https://app.aistudybud.site" class="btn !border-gray-800 !bg-black">
 					Try For Free</a
 				>
 			</nav>

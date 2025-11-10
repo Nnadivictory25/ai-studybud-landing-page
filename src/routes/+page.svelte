@@ -69,7 +69,7 @@
 		</p>
 
 		<a
-			href="https://app.aistudybud.online/"
+			href="https://app.aistudybud.site/"
 			class="btn mx-auto !mt-5 block w-full px-4 py-3 text-center text-base md:mx-0 md:w-fit md:text-lg"
 			>Get Started Now</a
 		>

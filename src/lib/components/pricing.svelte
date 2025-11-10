@@ -106,7 +106,7 @@
 			<div class="mb-5 flex justify-center px-6">
 				<a
 					class={` flex h-12 w-full items-center justify-center rounded-md bg-primary text-base font-medium text-white  hover:opacity-90 ${plan.isPopular ? '!bg-white font-semibold !text-black' : ''}`}
-					href="https://app.aistudybud.online/">Sign Up</a
+					href="https://app.aistudybud.site/">Sign Up</a
 				>
 			</div>
 			<Card.Content class="flex flex-col gap-4 font-medium">

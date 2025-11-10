@@ -96,7 +96,7 @@
 	<h3 id="8-1-contact-information">8.1. Contact Information</h3>
 	<p>
 		If you have any questions or concerns about these Terms, please contact us at
-		help@aistudybud.online.
+		help@aistudybud.site.
 	</p>
 </section>
 
